@@ -15,11 +15,15 @@ public abstract class Cache<V> {
 			resultaat = data.get();
 		}
 		if (resultaat == null) {
-			resultaat = bereken();
+			resultaat = calc();
 			data = new SoftReference<V>(resultaat);
 		}
 		return resultaat;
 	}
 	
-	protected abstract V bereken();		
+	public final void invalidate() {
+		data = null;
+	}
+	
+	protected abstract V calc();		
 }
