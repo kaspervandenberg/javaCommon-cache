@@ -3,7 +3,7 @@
 /**
  * 
  */
-package net.kaspervandenberg.apps.common.util;
+package net.kaspervandenberg.apps.common.util.cache;
 
 import java.lang.ref.SoftReference;
 
