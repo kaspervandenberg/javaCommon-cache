@@ -19,14 +19,11 @@ public abstract class MultiCache<K, V> {
 		}
 		return resultaat;
 	}
-	
+
 	public final V peek(K key) {
 		V resultaat = null;
 		if(data.containsKey(key)) {
 			resultaat = data.get(key);
-		} else {
-			resultaat = bereken(key);
-			data.put(key, resultaat);
 		}
 		return resultaat;		
 	}
