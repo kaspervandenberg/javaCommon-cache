@@ -20,6 +20,14 @@ public abstract class MultiCache<K, V> {
 		return resultaat;
 	}
 
+	public final void invalidate(K key) {
+		data.remove(key);
+	}
+	
+	public final void invalidateAll() {
+		data.clear();
+	}
+	
 	public final V peek(K key) {
 		V resultaat = null;
 		if(data.containsKey(key)) {
