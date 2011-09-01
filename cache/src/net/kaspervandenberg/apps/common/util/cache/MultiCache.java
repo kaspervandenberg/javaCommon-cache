@@ -12,14 +12,23 @@ public abstract class MultiCache<K, V> {
 		new WeakHashMap<K, V>();
 	
 	public final V get(K key) {
-		V resultaat;
+		V resultaat = peek(key);
+		if(resultaat == null) {
+			resultaat = bereken(key);
+			data.put(key, resultaat);
+		}
+		return resultaat;
+	}
+	
+	public final V peek(K key) {
+		V resultaat = null;
 		if(data.containsKey(key)) {
 			resultaat = data.get(key);
 		} else {
 			resultaat = bereken(key);
 			data.put(key, resultaat);
 		}
-		return resultaat;
+		return resultaat;		
 	}
 	
 	protected abstract V bereken(K key);
