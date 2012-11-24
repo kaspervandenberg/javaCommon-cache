@@ -3,7 +3,7 @@
 
   <groupId>net.kaspervandenberg</groupId>
   <artifactId>apps.common.util.cache</artifactId>
-  <version>1.0</version>
+  <version>1.1-SNAPSHOT</version>
   <name>Javacommon Cache</name>
   <url>http://www.kaspervandenberg.net/apps/common/util/cache</url>
   <packaging>jar</packaging>
