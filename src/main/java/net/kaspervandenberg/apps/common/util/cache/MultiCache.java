@@ -6,6 +6,7 @@
 package net.kaspervandenberg.apps.common.util.cache;
 
 import java.lang.ref.SoftReference;
+import java.util.Iterator;
 import java.util.concurrent.ConcurrentHashMap;
 
 public abstract class MultiCache<K, V> {
@@ -35,6 +36,16 @@ public abstract class MultiCache<K, V> {
 			result = ref.get();
 		}
 		return result;		
+	}
+
+	public final void optimize() {
+		Iterator<SoftReference<V>> iter = data.values().iterator();
+		while (iter.hasNext()) {
+			SoftReference<V> ref = iter.next();
+			if(ref.get() == null) {
+				iter.remove();
+			}
+		}
 	}
 	
 	protected abstract V calc(K key);
