@@ -3,7 +3,7 @@
 
 	<groupId>net.kaspervandenberg</groupId>
 	<artifactId>apps.common.util.cache</artifactId>
-	<version>1.0.2</version>
+	<version>1.0.3</version>
 	<name>Javacommon Cache</name>
 	<url>http://www.kaspervandenberg.net/apps/common/util/cache</url>
 	<packaging>jar</packaging>
@@ -17,27 +17,6 @@
 				<configuration>
 					<source>1.7</source>
 					<target>1.7</target>
-				</configuration>
-			</plugin>
-			
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-toolchains-plugin</artifactId>
-				<version>1.0</version>
-				<executions>
-					<execution>
-						<phase>validate</phase>
-						<goals>
-							<goal>toolchain</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<toolchains>
-						<jdk>
-							<version>1.7</version>
-						</jdk>
-					</toolchains>
 				</configuration>
 			</plugin>
 		</plugins>
